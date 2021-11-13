@@ -1,19 +1,13 @@
 package com.julia.topic5_dialog;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity  extends FragmentActivity
-        implements FireMissilesDialogFragment.NoticeDialogListener {
+        implements DialogoAlerta1.NoticeDialogListener {
 
     private TextView vista2;
     @Override
@@ -25,29 +19,15 @@ public class MainActivity  extends FragmentActivity
 
     public void verDialog(View view) {
         // Create an instance of the dialog fragment and show it
-        DialogFragment dialog = new FireMissilesDialogFragment();
-        dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
-    }
-
-    // The dialog fragment receives a reference to this Activity through the
-    // Fragment.onAttach() callback, which it uses to call the following methods
-    // defined by the NoticeDialogFragment.NoticeDialogListener interface
-    @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        // User touched the dialog's positive button
-        vista2.setText("Se disparan los misiles");
-
+        //DialogFragment dialog = new FireMissilesDialogFragment();
+        //dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
+        DialogFragment dialog = new DialogoAlerta1();
+        dialog.show(getSupportFragmentManager(), DialogoAlerta1.TAG);
     }
 
     @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
-        // User touched the dialog's negative button
-        vista2.setText("No se disparan los misiles");
-
+    public void onClick(DialogFragment dialog) {
+        vista2.setText(DialogoAlerta1.seleccion);
     }
-
-
-
-
 
 }

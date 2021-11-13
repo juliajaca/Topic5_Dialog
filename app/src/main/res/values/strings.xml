@@ -5,4 +5,5 @@
     <string name="cancel">cancelar</string>
     <string name="ok">ok</string>
     <string name="order_confirmation">order confirmation</string>
+    <string name="pick_color">Pick color</string>
 </resources>
