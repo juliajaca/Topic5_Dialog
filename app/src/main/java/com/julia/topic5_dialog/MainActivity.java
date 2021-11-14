@@ -10,11 +10,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity  extends FragmentActivity
-        implements Multichoice.NoticeDialogListener {
-    public static ArrayList selectedItems = new ArrayList();
+public class MainActivity  extends FragmentActivity implements Multichoice.NoticeDialogListener {
+    private  ArrayList selectedItems = new ArrayList();
     private TextView vista2;
-    private String texto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +28,7 @@ public class MainActivity  extends FragmentActivity
  @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
         // User touched the dialog's positive button
-        texto = "";
+     String texto = "";
         for (int i =0; i< selectedItems.size(); i++){
             texto += selectedItems.get(i);
         }

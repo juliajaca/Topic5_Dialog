@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 public class Multichoice extends DialogFragment {
     public static String TAG = "Multichoice";
-    public static ArrayList selectedItems;  // Where we track the selected items;
+    private ArrayList lista;  // Where we track the selected items;
 
     public Multichoice(ArrayList myLovelyList) {
-        this.selectedItems = myLovelyList;
+        this.lista = myLovelyList;
     }
 
     public interface NoticeDialogListener {
@@ -58,13 +58,13 @@ public class Multichoice extends DialogFragment {
                                 String[] colores = res.getStringArray(R.array.colors_array);
                                  String color = colores[which];
                                  // si lo habias marcado de antes te lo quita de la lista
-                                if (isChecked && !selectedItems.contains(color)) {
+                                if (isChecked && !lista.contains(color)) {
                                     // If the user checked the item, add it to the selected items
 
-                                    selectedItems.add(color);
-                                } else if (selectedItems.contains(color)) {
+                                    lista.add(color);
+                                } else if (lista.contains(color)) {
                                     // Else, if the item is already in the array, remove it
-                                    selectedItems.remove(color);
+                                    lista.remove(color);
                                 }
                             }
                         })
