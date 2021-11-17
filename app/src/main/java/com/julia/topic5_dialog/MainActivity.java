@@ -22,8 +22,8 @@ public class MainActivity  extends FragmentActivity implements Multichoice.Notic
     }
 
     public void verDialog(View view) {
-        DialogFragment dialog = new Multichoice(selectedItems);
-        dialog.show(getSupportFragmentManager(),Multichoice.TAG);
+        DialogFragment dialog = new SingleChoice(selectedItems);
+        dialog.show(getSupportFragmentManager(),SingleChoice.TAG);
     }
  @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
